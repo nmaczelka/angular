@@ -1,9 +1,12 @@
 <div class="container">
-  <div class="row"></div>
-  <input type="text" [(ngModel)]="name">
-  <h3>{{name}}</h3>
+  <app-cockpit (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"
+  >
+  </app-cockpit>
   <hr>
-  <app-servers></app-servers>
-  <app-warning-alert></app-warning-alert>
-  <app-success-alert></app-success-alert>
-</div>
+  <div class="row">
+    <div class="col-xs-12">
+        <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-server-element>
+    </div>
+  </div>
+</div> 
