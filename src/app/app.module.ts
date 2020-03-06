@@ -7,6 +7,7 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponenet } from './warning-alert/warning-alert-component';
+import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { WarningAlertComponenet } from './warning-alert/warning-alert-component'
     ServerComponent,
     ServersComponent,
     WarningAlertComponenet,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    BasicHighLightDirective
   ],
   imports: [
     BrowserModule,
