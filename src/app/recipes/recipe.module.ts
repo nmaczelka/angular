@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { RecipesComponent } from "./recipes.component";
 import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
@@ -8,6 +8,7 @@ import { RecipeEditComponent } from "./recipe-edit/recipe-edit.component";
 import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
+import { RecipesRoutingModule } from "./recipes.routing.module";
 
 @NgModule({
   declarations: [
@@ -18,14 +19,11 @@ import { SharedModule } from "../shared/shared.module";
     RecipeStartComponent,
     RecipeEditComponent,
   ],
-  imports: [RouterModule, SharedModule, ReactiveFormsModule],
-  exports: [
-    RecipesComponent,
-    RecipeDetailComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
+  imports: [
+    RouterModule,
+    SharedModule,
+    ReactiveFormsModule,
+    RecipesRoutingModule,
   ],
 })
 export class RecipeModule {}

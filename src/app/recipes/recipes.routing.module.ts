@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { RecipesComponent } from "./recipes.component";
 import { AuthGuard } from "../auth/auth.guard.service";
@@ -9,7 +9,7 @@ import { RecipeResolverService } from "./recipes-resolver.service";
 
 const routes: Routes = [
   {
-    path: "recipes",
+    path: "", //lazy loading végett az app.routing.module ba lett átvíve
     component: RecipesComponent,
     canActivate: [AuthGuard],
     children: [
